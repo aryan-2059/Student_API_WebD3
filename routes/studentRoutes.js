@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {students, getNextId} = require('../data/studentsData.js');
+const { students, getNextId } = require("../data/students");
 
 const validateStudent = (body) => {
     const {name, age, course} = body || {};
