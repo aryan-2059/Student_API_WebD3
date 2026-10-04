@@ -1,0 +1,25 @@
+{
+  "name": "student_api",
+  "version": "1.0.0",
+  "description": "Student Mgmt REST API using Express.js w/out dbs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryan-2059/Student_API_WebD3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aryan-2059/Student_API_WebD3/issues"
+  },
+  "homepage": "https://github.com/aryan-2059/Student_API_WebD3#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
