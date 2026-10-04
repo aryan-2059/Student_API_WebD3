@@ -53,3 +53,29 @@ router.post("/", (req,res)=>{
     students.push(newStudent);
     res.status(201).json(newStudent);
 })
+
+// put - update
+router.put("/:id", (req,res)=>{
+    const student = students.find((s)=>s.id===req.studentId);
+    if(!student) return res.status(404).json({error: "Student not found"});
+
+    const error = validateStudent(req.body);
+    if (error) return res.status(400).json(error);
+
+    const {name, age, course} = req.body;
+    student.name = name.trim();
+    student.age = age;
+    student.course = course.trim();
+    res.status(200).json(student);
+});
+
+// delete 
+router.delete("/:id", (req, res)=>{
+    const idx = students.findIndex((s)=> s.id===req.studentId);
+    if (idx===-1) return res.status(404).json({error: "Student not found"});
+
+    const [removed] = students.splice(idx, 1);
+    res.status(200).json({message: "Student deleted successfully", student: removed});
+});
+
+module.exports = router;
